@@ -1,0 +1,4 @@
+- python manage.py makemigrations — Modeldagi o‘zgarishlarni tayyorlaydi.  
+- python manage.py migrate — Ma’lumotlar bazasiga o‘zgarishlarni qo‘llaydi.  
+
+- python manage.py createsuperuser — Django admin paneli uchun superfoydalanuvchi yaratadi.  
