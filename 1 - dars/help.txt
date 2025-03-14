@@ -1,0 +1,10 @@
+- python -m venv nomi — Virtual muhit yaratadi.  
+- venv\Scripts\activate — Virtual muhitni faollashtiradi. 
+- pip freeze — O‘rnatilgan barcha Python kutubxonalar ro‘yxatini chiqaradi.  
+
+
+- pip install django — Django kutubxonasini o‘rnatadi.  
+- django-admin help — Django buyruqlari bo‘yicha yordamni chiqaradi.  
+- django-admin startproject project_name . — Joriy papkada Django loyihasini yaratadi.   
+
+- python manage.py startapp app_name — Yangi Django ilovasini yaratadi.  
