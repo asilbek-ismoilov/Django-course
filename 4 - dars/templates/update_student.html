@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Talabani Tahrirlash</title>
+</head>
+<body>
+    <h1>Talabani Tahrirlash</h1>
+    <form method="post">
+        {% csrf_token %} <!-- Xavfsizlik uchun token -->
+        {{ form.as_p }}
+        <button type="submit">Saqlash</button>
+    </form>
+    <a href="{% url 'students' %}">Orqaga</a>
+</body>
+</html>

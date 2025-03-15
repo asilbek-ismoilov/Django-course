@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Yangi Talaba Qo'shish</title>
+</head>
+<body>
+    <h1>Yangi Talaba Qo'shish</h1>
+    <form method="post">
+        {% csrf_token %} <!-- Xavfsizlik uchun token -->
+        {{ form.as_p }} <!-- Formani HTML teglarga o'giradi --> 
+        <!-- 📌 as_p paragraf (<p>) ichiga formadagi har bir elementni joylashtiradi. --> 
+        <button type="submit">Saqlash</button>
+    </form>
+    <a href="{% url 'students' %}">Orqaga</a>
+</body>
+</html>
