@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login # Foydalanuvchini tekshirish va tizimga kiritish uchun
 from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
 
@@ -22,18 +22,18 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def user_login(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('home')
+    if request.method == "POST":  # Agar foydalanuvchi formani yuborgan bo‘lsa
+        username = request.POST.get('username')  # Foydalanuvchi nomini olish
+        password = request.POST.get('password')  # Parolni olish
+        user = authenticate(request, username=username, password=password)  # Foydalanuvchini tekshirish
+        if user:  # Agar foydalanuvchi mavjud bo‘lsa
+            login(request, user)  # Tizimga kiritish
+            return redirect('home')  # Bosh sahifaga yo‘naltirish
         else:
-            error_message = "Login yoki parol noto‘g‘ri!"
-            return render(request, 'login.html', {'error_message': error_message})
+            error_message = "Login yoki parol noto‘g‘ri!"  # Xatolik xabari
+            return render(request, 'login.html', {'error_message': error_message})  # Xatolikni sahifaga jo‘natish
     
-    return render(request, 'login.html')
+    return render(request, 'login.html')  # Login sahifasini chiqarish
 
 from django.contrib.auth import logout
 
