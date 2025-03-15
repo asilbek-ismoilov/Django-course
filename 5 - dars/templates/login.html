@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Tizimga kirish</title>
+</head>
+<body>
+    <h1>Tizimga kirish</h1>
+    {% if error_message %}
+        <p style="color:red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Foydalanuvchi nomi:</label>
+        <input type="text" name="username" required>
+        <label for="password">Parol:</label>
+        <input type="password" name="password" required>
+        <button type="submit">Kirish</button>
+    </form>
+    <a href="{% url 'signup' %}">Ro‘yxatdan o‘tish</a>
+</body>
+</html>

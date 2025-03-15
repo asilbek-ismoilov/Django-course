@@ -1,0 +1,13 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Bosh sahifa</title>
+</head>
+<body>
+    <h1>Assalomu alaykum, {{ user.username }}!</h1>
+    <a href="{% url 'logout' %}">Chiqish</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ro‘yxatdan o‘tish</title>
+</head>
+<body>
+    <h1>Ro‘yxatdan o‘tish</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ro‘yxatdan o‘tish</button>
+    </form>
+    <a href="{% url 'login' %}">Tizimga kirish</a>
+</body>
+</html>
