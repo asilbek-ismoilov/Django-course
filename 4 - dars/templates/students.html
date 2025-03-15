@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talabalar Ro‘yxati</title>
+</head>
+<body>
+    <h1>Talabalar Ro‘yxati</h1>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.first_name }} {{ student.last_name }} - {{ student.age }} yosh</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
