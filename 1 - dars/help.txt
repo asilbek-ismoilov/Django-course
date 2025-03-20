@@ -8,3 +8,14 @@
 - django-admin startproject project_name . — Joriy papkada Django loyihasini yaratadi.   
 
 - python manage.py startapp app_name — Yangi Django ilovasini yaratadi.  
+
+Django'da path() funksiyasi URL marshrutlarini (routes) belgilash uchun ishlatiladi.
+path('', , name='') esa asosiy sahifaga (home page) yo‘nalishni ko‘rsatish uchun yoziladi.
+
+path('', view_funktsiya, name='nom')
+
+'' → Bo‘sh qoldirilsa, bu asosiy sahifa (http://127.0.0.1:8000/) bo‘ladi.
+
+view_funktsiya → Ushbu URL ga tashrif buyurilganda bajariladigan funksiya (views.py da yozilgan).
+
+name='nom' → URL'ga nom berish. Keyinchalik url yoki reverse() orqali foydalanish mumkin.
