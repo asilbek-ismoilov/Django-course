@@ -1,0 +1,4 @@
+path – Django'dagi URL yo‘nalishlarini yaratish uchun ishlatiladi.
+include – URL marshrutlarini guruhlash va boshqa urls.py fayllarini chaqirish uchun ishlatiladi.
+admin.site.urls — bu Django admin paneli uchun URL yo‘nalishi.
+
