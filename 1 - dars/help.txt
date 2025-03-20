@@ -9,6 +9,8 @@
 
 - python manage.py startapp app_name — Yangi Django ilovasini yaratadi.  
 
+-----------------------------------------------------------------------
+
 Django'da path() funksiyasi URL marshrutlarini (routes) belgilash uchun ishlatiladi.
 path('', , name='') esa asosiy sahifaga (home page) yo‘nalishni ko‘rsatish uchun yoziladi.
 
@@ -19,3 +21,44 @@ path('', view_funktsiya, name='nom')
 view_funktsiya → Ushbu URL ga tashrif buyurilganda bajariladigan funksiya (views.py da yozilgan).
 
 name='nom' → URL'ga nom berish. Keyinchalik url yoki reverse() orqali foydalanish mumkin.
+
+-----------------------------------------------------------------------
+
+manage.py — bu Django loyihasini boshqarish uchun maxsus skript fayli.
+U loyihani yaratish, serverni ishga tushirish, ma'lumotlar bazasi bilan ishlash va boshqa ko‘plab vazifalarni bajaradi.
+
+https://i.imghippo.com/files/qBRl7878zm.png
+
+python manage.py runserver	Lokal serverni ishga tushirish
+python manage.py startapp app_nomi	Yangi Django ilovasi (app) yaratish
+python manage.py migrate	Ma'lumotlar bazasiga o‘zgarishlarni kiritish
+python manage.py makemigrations	Modeldagi o‘zgarishlarni bazaga tayyorlash
+python manage.py createsuperuser	Admin panel uchun superuser yaratish
+python manage.py shell	Django interaktiv terminalini ochish
+python manage.py collectstatic	Statik fayllarni yig‘ish (deploy uchun)
+
+myproject/
+│── manage.py        # Django boshqaruv skripti
+│── myproject/
+│   ├── settings.py  # Loyiha sozlamalari
+│   ├── urls.py      # URL marshrutlari
+│   ├── wsgi.py      # WSGI server uchun sozlamalar
+│── app/
+│   ├── models.py    # Ma'lumotlar bazasi modellari
+│   ├── views.py     # Sahifa funksiyalari
+
+-----------------------------------------------------------------------
+
+Django'da HttpResponse sinfi foydalanuvchiga javob qaytarish (response) uchun ishlatiladi.
+Bu yordamida sahifaga matn, HTML yoki boshqa ma'lumotlar yuborish mumkin.
+
+HttpResponse("Matn") → Oddiy matn yoki HTML qaytarish uchun.
+return HttpResponse("Salom, bu Django sahifasi!")
+
+HttpResponseRedirect("url") → Foydalanuvchini boshqa sahifaga yo‘naltirish.
+return HttpResponse("<h1>Biz haqimizda</h1><p>Bu bizning saytimiz.</p>")
+return HttpResponseRedirect("/home/")
+
+JsonResponse({...}) → API uchun JSON ma'lumot qaytarish.
+data = {"ism": "Asilbek", "yosh": 25}
+return JsonResponse(data)
