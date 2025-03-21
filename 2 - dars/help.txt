@@ -34,4 +34,19 @@ myproject/
 ├── templates/
 │   ├── index.html
 │   ├── about.html
-    
+
+
+
+Django'da render() funksiyasi HTML sahifani ko‘rsatish uchun ishlatiladi.
+
+
+render() funksiyasiga request dan tashqari, boshqa HTTP so‘rov turlari (GET, POST, FILES, COOKIES, SESSION) 
+va boshqa obyektlarni uzatish mumkin.
+
+session (sessiya) - bu foydalanuvchining brauzerini yopib qayta ochgandan keyin ham ma’lumotlarni saqlab qolish 
+imkonini beruvchi Django mexanizmi.
+
+def set_session(request):
+    request.session['username'] = 'Asilbek'
+    request.session['age'] = 25
+    return HttpResponse("Session saqlandi!")
