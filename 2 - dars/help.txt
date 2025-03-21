@@ -34,3 +34,4 @@ myproject/
 ├── templates/
 │   ├── index.html
 │   ├── about.html
+    
