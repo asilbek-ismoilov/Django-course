@@ -8,3 +8,12 @@ csrf_token — bu xavfsizlik uchun ishlatiladi (quyida tushuntirilgan).
 {{ form.as_p }} — bu Django formalarini avtomatik chiqarish uchun ishlatiladi.
 
 <int:student_id> → Bu faqat integer (son) qabul qiladi.
+
+
+Django’da forms.py maxsus fayl bo‘lib, foydalanuvchilardan ma’lumot olish uchun formalar yaratish, tekshirish va qayta ishlash uchun ishlatiladi. 
+Django’dagi forms.Form yoki forms.ModelForm klasslari yordamida shakllar (formalar) yaratish mumkin.
+
+1. HTML formalarini avtomatik yaratish – Django modelga asoslangan formalarni (ModelForm) avtomatik yaratadi.
+2. Kiritilgan ma’lumotlarni tekshirish (validation) – Ma’lumotlarning to‘g‘ri formatda ekanligini tekshiradi.
+3. Xavfsizlik (CSRF himoyasi) – Formlar orqali kelayotgan ma’lumotlarni tekshirish orqali SQL Injection yoki boshqa xatolardan himoya qiladi.
+4. Toza va takrorlanmaydigan kod – forms.py orqali formalarni alohida joylashtirib, kodni tartibli qilish mumkin.
