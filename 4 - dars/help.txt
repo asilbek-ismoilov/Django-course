@@ -7,13 +7,4 @@ method="post" — bu ma’lumotlarni serverga yuborish metodi.
 csrf_token — bu xavfsizlik uchun ishlatiladi (quyida tushuntirilgan).
 {{ form.as_p }} — bu Django formalarini avtomatik chiqarish uchun ishlatiladi.
 
-
-{% load static %} nima?
-📌 Statik fayllarni (CSS, JS, rasm) yuklash uchun ishlatiladi.
-
-
-{{ }} → Ma’lumotlarni ekranga chiqarish
-{% %} → Django kodlarini yozish (if, for, load va boshqalar)
-
-
 <int:student_id> → Bu faqat integer (son) qabul qiladi.
