@@ -46,7 +46,21 @@ va boshqa obyektlarni uzatish mumkin.
 session (sessiya) - bu foydalanuvchining brauzerini yopib qayta ochgandan keyin ham ma’lumotlarni saqlab qolish 
 imkonini beruvchi Django mexanizmi.
 
+1. Sessiyaga ma’lumot yozish
+
 def set_session(request):
     request.session['username'] = 'Asilbek'
     request.session['age'] = 25
     return HttpResponse("Session saqlandi!")
+
+Bu kod foydalanuvchi nomi va yoshini sessiyada saqlaydi.
+
+2. Sessiyadan ma’lumot olish
+
+def get_session(request):
+    username = request.session.get('username', 'Mehmon')
+    age = request.session.get('age', 'Noma’lum')
+    return HttpResponse(f"Foydalanuvchi: {username}, Yosh: {age}")
+
+Agar sessiya mavjud bo‘lsa, u ma’lumotlarni chiqaradi. Agar yo‘q bo‘lsa, default qiymat (Mehmon, Noma’lum) chiqadi.
+
