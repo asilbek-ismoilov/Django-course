@@ -2,3 +2,35 @@ path – Django'dagi URL yo‘nalishlarini yaratish uchun ishlatiladi.
 include – URL marshrutlarini guruhlash va boshqa urls.py fayllarini chaqirish uchun ishlatiladi.
 admin.site.urls — bu Django admin paneli uchun URL yo‘nalishi.
 
+{% load static %} nima?
+📌 Statik fayllarni (CSS, JS, rasm) yuklash uchun ishlatiladi.
+
+
+{{ }} → Ma’lumotlarni ekranga chiqarish
+{% %} → Django kodlarini yozish (if, for, load va boshqalar)
+
+
+STATICFILES_DIRS - Statik fayllar yo‘li
+
+Bu statik fayllar (CSS, JavaScript, rasmlar va shunga o‘xshashlar) joylashgan katalogni belgilaydi.
+
+myproject/
+├── static/
+│   ├── css/
+│   │   ├── style.css
+│   ├── js/
+│   │   ├── script.js
+│   ├── images/
+│       ├── logo.png
+
+
+[BASE_DIR / 'templates'] - Shablonlar yo‘li
+
+Django templates/ papkasidagi HTML fayllarni ishlatishi uchun.
+Agar DIRS bo‘sh bo‘lsa, Django faqat app ichidagi templates/ papkasini tekshiradi.
+Agar DIRS = [BASE_DIR / 'templates'] belgilansa, umumiy templates/ papkasidan fayllarni qidiradi.
+
+myproject/
+├── templates/
+│   ├── index.html
+│   ├── about.html
