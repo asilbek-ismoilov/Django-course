@@ -21,6 +21,13 @@ def signup(request):
 
     return render(request, 'signup.html', {'form': form})
 
+# is_valid() metodi orqali forma to‘g‘ri to‘ldirilganligini tekshiramiz. Agar foydalanuvchi noto‘g‘ri ma’lumot kiritgan bo‘lsa, funksiya pastdagi kodni bajarmaydi.
+
+
+# set_password() metodi orqali parolni shifrlangan shaklda saqlaymiz.
+# Agar oddiy .password = form.cleaned_data['password'] ishlatsak, parol oddiy matn sifatida saqlanadi va bu xavfsizlik nuqtai nazaridan xato hisoblanadi.
+
+
 def user_login(request):
     if request.method == "POST":  # Agar foydalanuvchi formani yuborgan bo‘lsa
         username = request.POST.get('username')  # Foydalanuvchi nomini olish
