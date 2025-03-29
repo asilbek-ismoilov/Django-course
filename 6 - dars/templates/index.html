@@ -146,6 +146,7 @@
 
     <!-- Avatar Side Block Start -->
     <div id="avatar" class="avatar">
+      {% for description in descriptions %}
       <div class="avatar__container d-flex flex-column justify-content-lg-between">
         <!-- image and logo -->
         <div class="avatar__block">
@@ -153,7 +154,7 @@
             <div class="logo__image">
               <!-- Your Logo Here!!! -->
               <!--<img src="{% static 'img/logo.svg" alt="Braxton - Personal Portfolio & Resume HTML Template Logo">-->
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              <svg xmlns="{{ description.image.url }}" x="0px" y="0px"
                 width="85px" height="85px" viewBox="0 0 85 85" 
                 style="enable-background:new 0 0 85 85;" xml:space="preserve" class="gradient-fill">
                 <style type="text/css">
@@ -178,7 +179,7 @@
               </svg>
             </div>
             <div class="logo__caption">
-              <p>Alex<br>Walker</p>
+              <p>{{ description.first_name }}<br>{{ description.last_name }}</p>
             </div>
           </div>
           <div class="avatar__image">
@@ -189,14 +190,14 @@
         <div class="avatar__block">
           <h6>
             <small class="top">Specialization:</small>
-            UI/UX designer<br>and frontend developer
+            {{ description.specialization }}
           </h6>
         </div>
         <!-- data caption #2 -->
         <div class="avatar__block">
           <h6>
             <small class="top">Based in:</small>
-            Odesa, Ukraine
+            {{ description.based_in }}
           </h6>
         </div>
         <!-- socials and CTA button -->
@@ -227,6 +228,7 @@
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
     <!-- Avatar Side Block End -->
 
@@ -247,7 +249,9 @@
               </svg>
               <span>Let's meet!</span>
             </p>
-            <h1 class="headline__title animate-headline">I'm Alex Walker<br>Digital designer and illustrator.</h1>
+            {% for description in descriptions %}
+            <h1 class="headline__title animate-headline">{{ description.description }}</h1>
+            {% endfor %}
             <div class="headline__btnholder d-flex flex-column flex-sm-row">
               <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#portfolio">
                 <span class="btn-caption">My Works</span>
@@ -311,74 +315,21 @@
               <div class="row gx-0 my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
     
                 <!-- Works Gallery Single Item Start -->
+                {% for portfolio in portfolios %}
                 <figure class="col-12 col-md-6 gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="{% static 'img/works/1400x1400_w01.webp' %}" data-image="{% static 'img/works/1400x1400_w01.webp' %}" class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
-                    <img src="{% static 'img/works/800_w01-thumb.webp' %}" class="gallery__image" itemprop="thumbnail" alt="Image description">
+                  <a href="{{ portfolio.img.url }}" data-image="{{ portfolio.img.url }}" class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
+                    <img src="{{ portfolio.img.url }}" class="gallery__image" itemprop="thumbnail" alt="Image description">
                   </a>
                   <figcaption class="gallery__descr" itemprop="caption description">
-                    <h5>Isometric House</h5>
+                    <h5>{{ portfolio.name }}</h5>
                     <div class="card__tags d-flex flex-wrap">
-                      <span class="rounded-tag opposite">Illustrations</span>
-                      <span class="rounded-tag opposite">3D Render</span>
+                      <span class="rounded-tag opposite">{{ portfolio.category }}</span>
                     </div>
-                    <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio.
+                    <p class="small">{{ portfolio.description }}
                     </p>
                   </figcaption>
                 </figure>
-                <!-- Works Gallery Single Item End -->
-    
-                <!-- Works Gallery Single Item Start -->
-                <figure class="col-12 col-md-6 gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="{% static 'img/works/1400x1400_w02.webp' %}" data-image="{% static 'img/works/800_w02-thumb.webp' %}" class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
-                    <img src="{% static 'img/works/800_w02-thumb.webp' %}" class="gallery__image" itemprop="thumbnail" alt="Image description">
-                  </a>
-                  <figcaption class="gallery__descr opposite" itemprop="caption description">
-                    <h5 class="opposite">Dashboard Template</h5>
-                    <div class="card__tags d-flex flex-wrap">
-                      <span class="rounded-tag">UI Design</span>
-                      <span class="rounded-tag">Figma</span>
-                    </div>
-                    <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
-                      a mollis ipsum tristique eu.
-                    </p>
-                  </figcaption>
-                </figure>
-                <!-- Works Gallery Single Item End -->
-    
-                <!-- Works Gallery Single Item Start -->
-                <figure class="col-12 col-md-6 gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="{% static 'img/works/1400x1400_w03.webp' %}" data-image="{% static 'img/works/800_w03-thumb.webp' %}" class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
-                    <img src="{% static 'img/works/800_w03-thumb.webp' %}" class="gallery__image" itemprop="thumbnail" alt="Image description">
-                  </a>
-                  <figcaption class="gallery__descr opposite" itemprop="caption description">
-                    <h5 class="opposite">Notification Icon</h5>
-                    <div class="card__tags d-flex flex-wrap">
-                      <span class="rounded-tag">Illustrations</span>
-                      <span class="rounded-tag">3D Render</span>
-                    </div>
-                    <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
-                      a mollis ipsum tristique eu.
-                    </p>
-                  </figcaption>
-                </figure>
-                <!-- Works Gallery Single Item End -->
-    
-                <!-- Works Gallery Single Item Start -->
-                <figure class="col-12 col-md-6 gallery__item grid-item animate-card-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="{% static 'img/works/1400x1400_w04.webp' %}" data-image="{% static 'img/works/800_w04-thumb.webp' %}" class="gallery__link" itemprop="contentUrl" data-size="1400x1400">
-                    <img src="{% static 'img/works/800_w04-thumb.webp' %}" class="gallery__image" itemprop="thumbnail" alt="Image description">
-                  </a>
-                  <figcaption class="gallery__descr " itemprop="caption description">
-                    <h5>Smart Penguin</h5>
-                    <div class="card__tags d-flex flex-wrap">
-                      <span class="rounded-tag opposite">Illustrations</span>
-                      <span class="rounded-tag opposite">AI Experiment</span>
-                    </div>
-                    <p class="small">Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
-                      a mollis ipsum tristique eu.
-                    </p>
-                  </figcaption>
-                </figure>
+                {% endfor %}
                 <!-- Works Gallery Single Item End -->
     
               </div>
