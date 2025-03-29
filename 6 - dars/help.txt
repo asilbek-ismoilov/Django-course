@@ -1,0 +1,15 @@
+Django Jazzmin – bu Django admin panelini chiroyli va zamonaviy ko'rinishga keltirish uchun mo‘ljallangan Django dasturiy kengaytmasi. 
+U Bootstrap 4 dizaynidan foydalanib, Django standart admin panelini oson moslashtirish va yaxshilash imkonini beradi.
+
+
+pip install -U django-jazzmin
+
+INSTALLED_APPS = [
+    'jazzmin',  # Buni birinchi joyga qo'ying
+    'django.contrib.admin',
+    'django.contrib.auth',
+    ...
+]
+
+
+.gitignore — bu Git tizimi uchun fayl bo‘lib, u qaysi fayllar va papkalarni repositoryga yuklamaslik kerakligini belgilaydi.
